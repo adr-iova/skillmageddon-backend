@@ -5,7 +5,7 @@
   "description": "A Strapi application for hack",
   "scripts": {
     "develop": "strapi develop",
-    "start": "strapi start",
+    "start": "npm run develop",
     "build": "strapi build",
     "strapi": "strapi"
   },
