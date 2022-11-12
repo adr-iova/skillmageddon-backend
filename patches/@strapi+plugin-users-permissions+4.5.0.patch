@@ -1,5 +1,5 @@
 diff --git a/node_modules/@strapi/plugin-users-permissions/server/controllers/user.js b/node_modules/@strapi/plugin-users-permissions/server/controllers/user.js
-index f096bd8..73e6de9 100644
+index f096bd8..fa35fff 100644
 --- a/node_modules/@strapi/plugin-users-permissions/server/controllers/user.js
 +++ b/node_modules/@strapi/plugin-users-permissions/server/controllers/user.js
 @@ -10,6 +10,10 @@ const _ = require('lodash');
@@ -13,40 +13,16 @@ index f096bd8..73e6de9 100644
  
  const { sanitize } = utils;
  const { ApplicationError, ValidationError, NotFoundError } = utils.errors;
-@@ -33,7 +37,31 @@ module.exports = {
+@@ -33,7 +37,7 @@ module.exports = {
  
      await validateCreateUserBody(ctx.request.body);
  
 -    const { email, username, role } = ctx.request.body;
 +    const { email, username, role, toptalAlias } = ctx.request.body;
-+
-+    const scrapedPage = await scrape({
-+      urls: [`https://www.toptal.com/resume/${toptalAlias}`],
-+      directory: '../temp'
-+    })
-+
-+    const root = HTMLParser.parse(scrapedPage[0].text);
-+    const htmlElements = root.querySelectorAll(".js-technologies");
-+
-+    rimraf("../temp", function () {
-+      console.log(' temp directory deleted');
-+    });
-+
-+    let skills = [];
-+
-+    htmlElements
-+      .map(e => e.text.substring('Technologies: '.length).split(','))
-+      .forEach(setOfSkills => {
-+        setOfSkills.forEach(skill => {
-+          skills.push(skill.trim());
-+        })
-+      })
-+
-+    console.log('skills', skills);
  
      const userWithSameUsername = await strapi
        .query('plugin::users-permissions.user')
-@@ -69,6 +97,37 @@ module.exports = {
+@@ -69,6 +73,37 @@ module.exports = {
  
      try {
        const data = await getService('user').add(user);
@@ -85,14 +61,12 @@ index f096bd8..73e6de9 100644
  
        ctx.created(sanitizedData);
 diff --git a/node_modules/@strapi/plugin-users-permissions/server/services/providers-registry.js b/node_modules/@strapi/plugin-users-permissions/server/services/providers-registry.js
-index a6be6d5..d695f60 100644
+index a6be6d5..b0aa697 100644
 --- a/node_modules/@strapi/plugin-users-permissions/server/services/providers-registry.js
 +++ b/node_modules/@strapi/plugin-users-permissions/server/services/providers-registry.js
-@@ -49,15 +49,19 @@ const getInitialProviders = ({ purest }) => ({
-   async google({ accessToken }) {
+@@ -50,14 +50,18 @@ const getInitialProviders = ({ purest }) => ({
      const google = purest({ provider: 'google' });
  
-+    console.log("bam")
      return google
 -      .query('oauth')
 -      .get('tokeninfo')
@@ -109,9 +83,84 @@ index a6be6d5..d695f60 100644
 +          username: body.email.split('@')[0],
 +          email: body.email,
 +          name: body.name,
-+          picture: body.picture
++          picture: body.picture,
++          toptalAlias: body.email.split('@')[0].replace('.', '-')
 +        })
 +      }).catch(e => console.log(e));
    },
    async github({ accessToken }) {
      const github = purest({
+diff --git a/node_modules/@strapi/plugin-users-permissions/server/services/providers.js b/node_modules/@strapi/plugin-users-permissions/server/services/providers.js
+index 79805b3..374927e 100644
+--- a/node_modules/@strapi/plugin-users-permissions/server/services/providers.js
++++ b/node_modules/@strapi/plugin-users-permissions/server/services/providers.js
+@@ -7,6 +7,9 @@
+ // Public node modules.
+ const _ = require('lodash');
+ const urlJoin = require('url-join');
++const scrape = require('website-scraper');
++const rimraf = require("rimraf");
++const HTMLParser = require('node-html-parser');
+ 
+ const { getAbsoluteServerUrl } = require('@strapi/utils');
+ const { getService } = require('../utils');
+@@ -96,10 +99,59 @@ module.exports = ({ strapi }) => {
+       confirmed: true,
+     };
+ 
++    const scrapedPage = await scrape({
++      urls: [`https://www.toptal.com/resume/${newUser.toptalAlias}`],
++      directory: '../temp'
++    })
++
++    const root = HTMLParser.parse(scrapedPage[0].text);
++    const htmlElements = root.querySelectorAll(".js-technologies");
++
++    rimraf("../temp", function () {
++      console.log(' temp directory deleted');
++    });
++
++    let skills = [];
++
++    htmlElements
++      .map(e => e.text.substring('Technologies: '.length).split(','))
++      .forEach(setOfSkills => {
++        setOfSkills.forEach(skill => {
++          skills.push(skill.trim());
++        })
++      })
++
+     const createdUser = await strapi
+       .query('plugin::users-permissions.user')
+       .create({ data: newUser });
+ 
++    const skillsData = await Promise.all(_.uniq(skills).
++      map(async name => {
++        const existingSkill = await strapi.db.query('api::skill.skill')
++          .findOne({
++            where: { name },
++            populate: { users: true },
++          });
++
++      let skillBody;
++
++      if (existingSkill) {
++        skillBody = existingSkill;
++        skillBody.users.push(createdUser.id);
++        return strapi.service('api::skill.skill').update({data: skillBody});
++      }
++
++      skillBody = {
++        name,
++        users: [createdUser.id]
++      };
++
++      console.log('skillBody', skillBody);
++      return strapi.service('api::skill.skill').create({data: skillBody});
++    }));
++
++    console.log('skillsDat', skillsData)
++
+     return createdUser;
+   };
+ 

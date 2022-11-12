@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2022-11-12T20:43:39.493Z"
+    "x-generation-date": "2022-11-12T22:26:11.332Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -2553,6 +2553,9 @@
                                         "picture": {
                                           "type": "string"
                                         },
+                                        "country": {
+                                          "type": "string"
+                                        },
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -3874,6 +3877,9 @@
                                           "type": "string"
                                         },
                                         "picture": {
+                                          "type": "string"
+                                        },
+                                        "country": {
                                           "type": "string"
                                         },
                                         "createdAt": {
@@ -5232,6 +5238,9 @@
                                         "picture": {
                                           "type": "string"
                                         },
+                                        "country": {
+                                          "type": "string"
+                                        },
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -6553,6 +6562,9 @@
                                           "type": "string"
                                         },
                                         "picture": {
+                                          "type": "string"
+                                        },
+                                        "country": {
                                           "type": "string"
                                         },
                                         "createdAt": {
@@ -8039,6 +8051,9 @@
                             "picture": {
                               "type": "string"
                             },
+                            "country": {
+                              "type": "string"
+                            },
                             "createdAt": {
                               "type": "string",
                               "format": "date-time"
@@ -9328,6 +9343,9 @@
                               "type": "string"
                             },
                             "picture": {
+                              "type": "string"
+                            },
+                            "country": {
                               "type": "string"
                             },
                             "createdAt": {
@@ -10654,6 +10672,9 @@
                             "picture": {
                               "type": "string"
                             },
+                            "country": {
+                              "type": "string"
+                            },
                             "createdAt": {
                               "type": "string",
                               "format": "date-time"
@@ -11943,6 +11964,9 @@
                               "type": "string"
                             },
                             "picture": {
+                              "type": "string"
+                            },
+                            "country": {
                               "type": "string"
                             },
                             "createdAt": {
@@ -13302,6 +13326,9 @@
                             "picture": {
                               "type": "string"
                             },
+                            "country": {
+                              "type": "string"
+                            },
                             "createdAt": {
                               "type": "string",
                               "format": "date-time"
@@ -14591,6 +14618,9 @@
                               "type": "string"
                             },
                             "picture": {
+                              "type": "string"
+                            },
+                            "country": {
                               "type": "string"
                             },
                             "createdAt": {
@@ -15917,6 +15947,9 @@
                             "picture": {
                               "type": "string"
                             },
+                            "country": {
+                              "type": "string"
+                            },
                             "createdAt": {
                               "type": "string",
                               "format": "date-time"
@@ -17208,6 +17241,9 @@
                             "picture": {
                               "type": "string"
                             },
+                            "country": {
+                              "type": "string"
+                            },
                             "createdAt": {
                               "type": "string",
                               "format": "date-time"
@@ -18470,6 +18506,9 @@
                                           "type": "string"
                                         },
                                         "picture": {
+                                          "type": "string"
+                                        },
+                                        "country": {
                                           "type": "string"
                                         },
                                         "createdAt": {
@@ -19759,6 +19798,9 @@
                                           "type": "string"
                                         },
                                         "picture": {
+                                          "type": "string"
+                                        },
+                                        "country": {
                                           "type": "string"
                                         },
                                         "createdAt": {
@@ -21083,6 +21125,9 @@
                                         "picture": {
                                           "type": "string"
                                         },
+                                        "country": {
+                                          "type": "string"
+                                        },
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -22372,6 +22417,9 @@
                                         "picture": {
                                           "type": "string"
                                         },
+                                        "country": {
+                                          "type": "string"
+                                        },
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -23618,6 +23666,9 @@
                                                       "type": "string"
                                                     },
                                                     "picture": {
+                                                      "type": "string"
+                                                    },
+                                                    "country": {
                                                       "type": "string"
                                                     },
                                                     "createdAt": {
@@ -24886,6 +24937,9 @@
                                                       "type": "string"
                                                     },
                                                     "picture": {
+                                                      "type": "string"
+                                                    },
+                                                    "country": {
                                                       "type": "string"
                                                     },
                                                     "createdAt": {
@@ -26189,6 +26243,9 @@
                                                     "picture": {
                                                       "type": "string"
                                                     },
+                                                    "country": {
+                                                      "type": "string"
+                                                    },
                                                     "createdAt": {
                                                       "type": "string",
                                                       "format": "date-time"
@@ -27455,6 +27512,9 @@
                                                       "type": "string"
                                                     },
                                                     "picture": {
+                                                      "type": "string"
+                                                    },
+                                                    "country": {
                                                       "type": "string"
                                                     },
                                                     "createdAt": {
@@ -34015,6 +34075,9 @@
                                         "picture": {
                                           "type": "string"
                                         },
+                                        "country": {
+                                          "type": "string"
+                                        },
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -35260,6 +35323,9 @@
                                           "type": "string"
                                         },
                                         "picture": {
+                                          "type": "string"
+                                        },
+                                        "country": {
                                           "type": "string"
                                         },
                                         "createdAt": {
@@ -36542,6 +36608,9 @@
                                         "picture": {
                                           "type": "string"
                                         },
+                                        "country": {
+                                          "type": "string"
+                                        },
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -37787,6 +37856,9 @@
                                           "type": "string"
                                         },
                                         "picture": {
+                                          "type": "string"
+                                        },
+                                        "country": {
                                           "type": "string"
                                         },
                                         "createdAt": {
@@ -39057,6 +39129,9 @@
                                                         "type": "string"
                                                       },
                                                       "picture": {
+                                                        "type": "string"
+                                                      },
+                                                      "country": {
                                                         "type": "string"
                                                       },
                                                       "createdAt": {
@@ -40333,6 +40408,9 @@
                                                         "type": "string"
                                                       },
                                                       "picture": {
+                                                        "type": "string"
+                                                      },
+                                                      "country": {
                                                         "type": "string"
                                                       },
                                                       "createdAt": {
@@ -41644,6 +41722,9 @@
                                                       "picture": {
                                                         "type": "string"
                                                       },
+                                                      "country": {
+                                                        "type": "string"
+                                                      },
                                                       "createdAt": {
                                                         "type": "string",
                                                         "format": "date-time"
@@ -42920,6 +43001,9 @@
                                                       "picture": {
                                                         "type": "string"
                                                       },
+                                                      "country": {
+                                                        "type": "string"
+                                                      },
                                                       "createdAt": {
                                                         "type": "string",
                                                         "format": "date-time"
@@ -43256,6 +43340,9 @@
                 "type": "string"
               },
               "picture": {
+                "type": "string"
+              },
+              "country": {
                 "type": "string"
               }
             }
@@ -44385,6 +44472,9 @@
                                         "picture": {
                                           "type": "string"
                                         },
+                                        "country": {
+                                          "type": "string"
+                                        },
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -44569,6 +44659,9 @@
                 "type": "string"
               },
               "picture": {
+                "type": "string"
+              },
+              "country": {
                 "type": "string"
               },
               "createdAt": {
@@ -45740,6 +45833,9 @@
                                         "picture": {
                                           "type": "string"
                                         },
+                                        "country": {
+                                          "type": "string"
+                                        },
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -45924,6 +46020,9 @@
                 "type": "string"
               },
               "picture": {
+                "type": "string"
+              },
+              "country": {
                 "type": "string"
               },
               "createdAt": {
@@ -47128,6 +47227,9 @@
                                         "picture": {
                                           "type": "string"
                                         },
+                                        "country": {
+                                          "type": "string"
+                                        },
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -47312,6 +47414,9 @@
                 "type": "string"
               },
               "picture": {
+                "type": "string"
+              },
+              "country": {
                 "type": "string"
               },
               "createdAt": {
@@ -48483,6 +48588,9 @@
                                         "picture": {
                                           "type": "string"
                                         },
+                                        "country": {
+                                          "type": "string"
+                                        },
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -48667,6 +48775,9 @@
                 "type": "string"
               },
               "picture": {
+                "type": "string"
+              },
+              "country": {
                 "type": "string"
               },
               "createdAt": {
