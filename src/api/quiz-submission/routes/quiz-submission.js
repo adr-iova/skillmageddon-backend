@@ -9,5 +9,14 @@ module.exports = {
        middlewares: [],
      },
     },
+    {
+      method: 'GET',
+      path: '/quiz-full/:id',
+      handler: 'quiz-submission.getQuiz',
+      config: {
+        policies: [],
+        middlewares: [],
+      },
+    },
   ],
 };

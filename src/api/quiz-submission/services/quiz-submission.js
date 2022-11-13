@@ -89,5 +89,24 @@ module.exports = ({ strapi }) => ({
 
     return submissionQuestionsEntries;
 
+  },
+
+  async quiz(ctx) {
+    let fullQuiz = {
+    }
+    const quiz = await strapi.db.query('api::quiz.quiz').findOne({
+      where: {
+        id: ctx.params.id
+      },
+      populate: {
+        questions: {
+          populate: {
+            answers: true
+          }
+        }
+      }
+    });
+
+    return quiz;
   }
 });

@@ -7,8 +7,14 @@
 module.exports = ({ strapi }) => ({
   async submitQuiz(ctx) {
     ctx.body = await strapi
-      .plugin('invite')
-      .service('quizSubmissionService')
+      .service('api::quiz-submission.quiz-submission')
       .createSubmission(ctx);
+  },
+  async getQuiz(ctx) {
+    console.log()
+    console.log()
+    ctx.body = await strapi
+      .service('api::quiz-submission.quiz-submission')
+      .quiz(ctx);
   }
 });
