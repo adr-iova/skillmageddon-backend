@@ -76,9 +76,12 @@ module.exports = ({ strapi }) => ({
         },
         populate: {
           users: true,
+          submissions: {
+            users: true
+          }
         }
       });
 
-    return invites;
+    return invites.filter(i => !i.submissions.users.some(u => u.id === ctx.state.user.id))
   }
 });
