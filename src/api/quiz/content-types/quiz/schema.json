@@ -12,11 +12,11 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "users_permissions_users": {
+    "users": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "plugin::users-permissions.user",
-      "inversedBy": "quizzes"
+      "mappedBy": "quizzes"
     },
     "questions": {
       "type": "relation",
@@ -29,6 +29,10 @@
       "relation": "oneToMany",
       "target": "api::submission.submission",
       "mappedBy": "quiz"
+    },
+    "isFinished": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

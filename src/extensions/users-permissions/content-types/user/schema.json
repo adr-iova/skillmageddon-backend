@@ -66,12 +66,6 @@
     "toptalAlias": {
       "type": "string"
     },
-    "quizzes": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::quiz.quiz",
-      "mappedBy": "users_permissions_users"
-    },
     "submissions": {
       "type": "relation",
       "relation": "oneToMany",
@@ -97,6 +91,15 @@
       "type": "string"
     },
     "country": {
+      "type": "string"
+    },
+    "quizzes": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::quiz.quiz",
+      "inversedBy": "users"
+    },
+    "job": {
       "type": "string"
     }
   }
