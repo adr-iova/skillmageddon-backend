@@ -89,7 +89,7 @@ index a6be6d5..b0aa697 100644
    async github({ accessToken }) {
      const github = purest({
 diff --git a/node_modules/@strapi/plugin-users-permissions/server/services/providers.js b/node_modules/@strapi/plugin-users-permissions/server/services/providers.js
-index 79805b3..eba838d 100644
+index 79805b3..854fa5d 100644
 --- a/node_modules/@strapi/plugin-users-permissions/server/services/providers.js
 +++ b/node_modules/@strapi/plugin-users-permissions/server/services/providers.js
 @@ -7,6 +7,9 @@
@@ -111,7 +111,7 @@ index 79805b3..eba838d 100644
        ...profile,
        email, // overwrite with lowercased email
        provider,
-@@ -96,9 +99,75 @@ module.exports = ({ strapi }) => {
+@@ -96,9 +99,74 @@ module.exports = ({ strapi }) => {
        confirmed: true,
      };
  
@@ -125,11 +125,10 @@ index 79805b3..eba838d 100644
 +        createdUser = await strapi
 +          .query('plugin::users-permissions.user')
 +          .create({ data: newUser });
-+
 +      } else {
 +        const scrapedPage = await scrape({
 +          urls: [`https://www.toptal.com/resume/${newUser.toptalAlias}`],
-+          directory: `/app/crawl`
++          directory: `/app/crawl-${newUser.toptalAlias}`
 +        })
 +
 +        const root = HTMLParser.parse(scrapedPage[0].text);
@@ -177,12 +176,12 @@ index 79805b3..eba838d 100644
 +            users: [createdUser.id]
 +          };
 +
-+          strapi.service('api::skill.skill').create({data: skillBody});
++          await strapi.service('api::skill.skill').create({data: skillBody});
 +        }));
 +      }
 +    } finally {
 +      if (email.split('@')[1].includes('toptal')) {
-+        rimraf(`/app/crawl`, function () {
++        rimraf(`/app/crawl-${newUser.toptalAlias}`, function () {
 +          console.log('directory deleted');
 +        });
 +      }
