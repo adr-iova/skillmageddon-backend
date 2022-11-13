@@ -54,7 +54,7 @@ module.exports = ({ strapi }) => ({
 
     // uncomment this once enough data
     // const skill = await getIntersectedSkill(invitedUser, currentUser);
-    const skill = 127;
+    const skill = 307;
     const questions = await getQuizQuestionsBySkill(skill);
 
     const quizBody = {
