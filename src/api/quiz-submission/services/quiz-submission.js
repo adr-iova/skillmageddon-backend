@@ -78,7 +78,11 @@ module.exports = ({ strapi }) => ({
 
     console.log("updated submission with score");
 
-    const currentUser = await strapi.db.query('plugin::users-permissions.user').findOne(ctx.state.user.id);
+    const currentUser = await strapi.db.query('plugin::users-permissions.user').findOne({
+      where: {
+        id: ctx.state.user.id
+      }
+    });
 
     await strapi.db.query('plugin::users-permissions.user').update( {
       where: {
