@@ -57,7 +57,7 @@ module.exports = ({ strapi }) => ({
       const selectedAnswer = question.answers.find(a => a.text === response.answer);
 
       if (selectedAnswer && selectedAnswer.isCorrect) {
-        const score = question.Score + getTimeScore(question, selectedAnswer);
+        const score = question.Score + getTimeScore(question, response);
         questionSubmissionBody.score = score;
         totalScore += score;
 
@@ -71,7 +71,6 @@ module.exports = ({ strapi }) => ({
 
     console.log("created question submissions");
 
-    console.log(totalScore);
     await strapi.service('api::submission.submission').update(submission.id, {data: {
       ...submission,
         score: totalScore
@@ -81,19 +80,17 @@ module.exports = ({ strapi }) => ({
 
     const currentUser = await strapi.db.query('plugin::users-permissions.user').findOne(ctx.state.user.id);
 
-    console.log(currentUser);
     await strapi.db.query('plugin::users-permissions.user').update( {
       where: {
         id: ctx.state.user.id,
       },
       data: {
-        totalScore: currentUser.score + totalScore
+        totalScore: currentUser.totalScore + totalScore
       }
     });
 
     console.log('updated current user', (currentUser.score || 0) + totalScore);
 
-    console.log(questionSubmissionBodies);
     return {
       totalScore,
       questionSubmissions: questionSubmissionBodies
