@@ -116,5 +116,38 @@ module.exports = ({ strapi }) => ({
     });
 
     return quiz;
+  },
+
+  async history(ctx) {
+    const quizzes = await strapi.db.query('api::quiz.quiz').findMany({
+      where: {
+        users: {
+          id: ctx.state.user.id
+        }
+      },
+      populate: {
+        submissions: {
+          user: true,
+          score: true
+        }
+      }
+    });
+
+    return quizzes.map(q => {
+      let quiz = {...q};
+      if (q.submissions.length === 2) {
+        if (q.submissions[0].score > q.submissions[1]) {
+          quiz.winner = q.submissions[0].user;
+        } else if (q.submissions[0].score < q.submissions[1]){
+          quiz.winner = q.submissions[1].user;
+        }
+        quiz.winner = 'draw';
+      } else {
+        quiz.winner = null;
+      }
+
+      return quiz;
+
+    })
   }
 });

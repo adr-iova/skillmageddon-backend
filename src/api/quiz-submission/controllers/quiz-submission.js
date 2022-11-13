@@ -16,5 +16,12 @@ module.exports = ({ strapi }) => ({
     ctx.body = await strapi
       .service('api::quiz-submission.quiz-submission')
       .quiz(ctx);
+  },
+  async myHistory(ctx) {
+    console.log()
+    console.log()
+    ctx.body = await strapi
+      .service('api::quiz-submission.quiz-submission')
+      .history(ctx);
   }
 });

@@ -17,6 +17,14 @@ module.exports = {
         policies: [],
         middlewares: [],
       },
-    },
+    }, {
+      method: 'GET',
+      path: '/history',
+      handler: 'quiz-submission.myHistory',
+      config: {
+        policies: [],
+        middlewares: [],
+      },
+    }
   ],
 };
