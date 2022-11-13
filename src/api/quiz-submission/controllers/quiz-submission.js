@@ -5,8 +5,8 @@
  */
 
 module.exports = ({ strapi }) => ({
-  submitQuiz(ctx) {
-    ctx.body = strapi
+  async submitQuiz(ctx) {
+    ctx.body = await strapi
       .plugin('invite')
       .service('quizSubmissionService')
       .createSubmission(ctx);

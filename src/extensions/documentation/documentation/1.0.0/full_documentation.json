@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2022-11-13T10:58:29.245Z"
+    "x-generation-date": "2022-11-13T12:07:47.932Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -2535,6 +2535,9 @@
                                         "job": {
                                           "type": "string"
                                         },
+                                        "totalScore": {
+                                          "type": "integer"
+                                        },
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -3847,6 +3850,9 @@
                                         },
                                         "job": {
                                           "type": "string"
+                                        },
+                                        "totalScore": {
+                                          "type": "integer"
                                         },
                                         "createdAt": {
                                           "type": "string",
@@ -5194,6 +5200,9 @@
                                         "job": {
                                           "type": "string"
                                         },
+                                        "totalScore": {
+                                          "type": "integer"
+                                        },
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -6506,6 +6515,9 @@
                                         },
                                         "job": {
                                           "type": "string"
+                                        },
+                                        "totalScore": {
+                                          "type": "integer"
                                         },
                                         "createdAt": {
                                           "type": "string",
@@ -7980,6 +7992,9 @@
                             "job": {
                               "type": "string"
                             },
+                            "totalScore": {
+                              "type": "integer"
+                            },
                             "createdAt": {
                               "type": "string",
                               "format": "date-time"
@@ -9260,6 +9275,9 @@
                             },
                             "job": {
                               "type": "string"
+                            },
+                            "totalScore": {
+                              "type": "integer"
                             },
                             "createdAt": {
                               "type": "string",
@@ -10575,6 +10593,9 @@
                             "job": {
                               "type": "string"
                             },
+                            "totalScore": {
+                              "type": "integer"
+                            },
                             "createdAt": {
                               "type": "string",
                               "format": "date-time"
@@ -11855,6 +11876,9 @@
                             },
                             "job": {
                               "type": "string"
+                            },
+                            "totalScore": {
+                              "type": "integer"
                             },
                             "createdAt": {
                               "type": "string",
@@ -13203,6 +13227,9 @@
                             "job": {
                               "type": "string"
                             },
+                            "totalScore": {
+                              "type": "integer"
+                            },
                             "createdAt": {
                               "type": "string",
                               "format": "date-time"
@@ -14480,6 +14507,9 @@
                             },
                             "job": {
                               "type": "string"
+                            },
+                            "totalScore": {
+                              "type": "integer"
                             },
                             "createdAt": {
                               "type": "string",
@@ -15792,6 +15822,9 @@
                             "job": {
                               "type": "string"
                             },
+                            "totalScore": {
+                              "type": "integer"
+                            },
                             "createdAt": {
                               "type": "string",
                               "format": "date-time"
@@ -17070,6 +17103,9 @@
                             "job": {
                               "type": "string"
                             },
+                            "totalScore": {
+                              "type": "integer"
+                            },
                             "createdAt": {
                               "type": "string",
                               "format": "date-time"
@@ -18324,6 +18360,9 @@
                                         },
                                         "job": {
                                           "type": "string"
+                                        },
+                                        "totalScore": {
+                                          "type": "integer"
                                         },
                                         "createdAt": {
                                           "type": "string",
@@ -19603,6 +19642,9 @@
                                         },
                                         "job": {
                                           "type": "string"
+                                        },
+                                        "totalScore": {
+                                          "type": "integer"
                                         },
                                         "createdAt": {
                                           "type": "string",
@@ -20916,6 +20958,9 @@
                                         "job": {
                                           "type": "string"
                                         },
+                                        "totalScore": {
+                                          "type": "integer"
+                                        },
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -22195,6 +22240,9 @@
                                         "job": {
                                           "type": "string"
                                         },
+                                        "totalScore": {
+                                          "type": "integer"
+                                        },
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -23433,6 +23481,9 @@
                                                     },
                                                     "job": {
                                                       "type": "string"
+                                                    },
+                                                    "totalScore": {
+                                                      "type": "integer"
                                                     },
                                                     "createdAt": {
                                                       "type": "string",
@@ -24688,6 +24739,9 @@
                                                     },
                                                     "job": {
                                                       "type": "string"
+                                                    },
+                                                    "totalScore": {
+                                                      "type": "integer"
                                                     },
                                                     "createdAt": {
                                                       "type": "string",
@@ -25977,6 +26031,9 @@
                                                     "job": {
                                                       "type": "string"
                                                     },
+                                                    "totalScore": {
+                                                      "type": "integer"
+                                                    },
                                                     "createdAt": {
                                                       "type": "string",
                                                       "format": "date-time"
@@ -27231,6 +27288,9 @@
                                                     },
                                                     "job": {
                                                       "type": "string"
+                                                    },
+                                                    "totalScore": {
+                                                      "type": "integer"
                                                     },
                                                     "createdAt": {
                                                       "type": "string",
@@ -33775,6 +33835,9 @@
                                         "job": {
                                           "type": "string"
                                         },
+                                        "totalScore": {
+                                          "type": "integer"
+                                        },
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -35012,6 +35075,9 @@
                                         },
                                         "job": {
                                           "type": "string"
+                                        },
+                                        "totalScore": {
+                                          "type": "integer"
                                         },
                                         "createdAt": {
                                           "type": "string",
@@ -36284,6 +36350,9 @@
                                         "job": {
                                           "type": "string"
                                         },
+                                        "totalScore": {
+                                          "type": "integer"
+                                        },
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -37521,6 +37590,9 @@
                                         },
                                         "job": {
                                           "type": "string"
+                                        },
+                                        "totalScore": {
+                                          "type": "integer"
                                         },
                                         "createdAt": {
                                           "type": "string",
@@ -38782,6 +38854,9 @@
                                                       },
                                                       "job": {
                                                         "type": "string"
+                                                      },
+                                                      "totalScore": {
+                                                        "type": "integer"
                                                       },
                                                       "createdAt": {
                                                         "type": "string",
@@ -40049,6 +40124,9 @@
                                                       },
                                                       "job": {
                                                         "type": "string"
+                                                      },
+                                                      "totalScore": {
+                                                        "type": "integer"
                                                       },
                                                       "createdAt": {
                                                         "type": "string",
@@ -41350,6 +41428,9 @@
                                                       "job": {
                                                         "type": "string"
                                                       },
+                                                      "totalScore": {
+                                                        "type": "integer"
+                                                      },
                                                       "createdAt": {
                                                         "type": "string",
                                                         "format": "date-time"
@@ -42617,6 +42698,9 @@
                                                       "job": {
                                                         "type": "string"
                                                       },
+                                                      "totalScore": {
+                                                        "type": "integer"
+                                                      },
                                                       "createdAt": {
                                                         "type": "string",
                                                         "format": "date-time"
@@ -42960,6 +43044,9 @@
               },
               "job": {
                 "type": "string"
+              },
+              "totalScore": {
+                "type": "integer"
               }
             }
           }
@@ -44079,6 +44166,9 @@
                                         "job": {
                                           "type": "string"
                                         },
+                                        "totalScore": {
+                                          "type": "integer"
+                                        },
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -44270,6 +44360,9 @@
               },
               "job": {
                 "type": "string"
+              },
+              "totalScore": {
+                "type": "integer"
               },
               "createdAt": {
                 "type": "string",
@@ -45431,6 +45524,9 @@
                                         "job": {
                                           "type": "string"
                                         },
+                                        "totalScore": {
+                                          "type": "integer"
+                                        },
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -45622,6 +45718,9 @@
               },
               "job": {
                 "type": "string"
+              },
+              "totalScore": {
+                "type": "integer"
               },
               "createdAt": {
                 "type": "string",
@@ -46816,6 +46915,9 @@
                                         "job": {
                                           "type": "string"
                                         },
+                                        "totalScore": {
+                                          "type": "integer"
+                                        },
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -47007,6 +47109,9 @@
               },
               "job": {
                 "type": "string"
+              },
+              "totalScore": {
+                "type": "integer"
               },
               "createdAt": {
                 "type": "string",
@@ -48168,6 +48273,9 @@
                                         "job": {
                                           "type": "string"
                                         },
+                                        "totalScore": {
+                                          "type": "integer"
+                                        },
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -48359,6 +48467,9 @@
               },
               "job": {
                 "type": "string"
+              },
+              "totalScore": {
+                "type": "integer"
               },
               "createdAt": {
                 "type": "string",

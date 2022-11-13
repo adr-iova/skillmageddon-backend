@@ -1,7 +1,7 @@
 module.exports = {
   routes: [
     {
-     method: 'GET',
+     method: 'POST',
      path: '/quiz-submission',
      handler: 'quiz-submission.submitQuiz',
      config: {
