@@ -110,7 +110,8 @@ module.exports = ({ strapi }) => ({
               select: ['text', 'id']
             },
           }
-        }
+        },
+        users: true
       }
     });
 
