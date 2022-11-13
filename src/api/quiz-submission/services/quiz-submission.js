@@ -101,7 +101,9 @@ module.exports = ({ strapi }) => ({
       populate: {
         questions: {
           populate: {
-            answers: true
+            answers: {
+              select: ['text', 'id']
+            },
           }
         }
       }
