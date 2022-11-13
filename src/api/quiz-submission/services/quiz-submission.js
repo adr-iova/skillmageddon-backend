@@ -95,9 +95,43 @@ module.exports = ({ strapi }) => ({
 
     console.log('updated current user', (currentUser.score || 0) + totalScore);
 
+
+    let finalizedQuizForUser = await strapi.db.query('api::quiz.quiz').findOne({
+      where: {
+        users: {
+          id: ctx.request.body.quizId
+        }
+      },
+      populate: {
+        users: true,
+        submissions: {
+          populate: {
+            user: true,
+          }
+        }
+      }
+    });
+
+
+    if (finalizedQuizForUser.submissions.length === 2) {
+      console.log(finalizedQuizForUser.submissions[0].score, finalizedQuizForUser.submissions[1].score)
+      if (finalizedQuizForUser.submissions[0].score > finalizedQuizForUser.submissions[1].score) {
+        finalizedQuizForUser.winner = finalizedQuizForUser.submissions[0].user;
+      } else if (finalizedQuizForUser.submissions[0].score < finalizedQuizForUser.submissions[1].score) {
+        console.log(q.submissions[1].user);
+        finalizedQuizForUser.winner = finalizedQuizForUser.submissions[1].user;
+      } else {
+        finalizedQuizForUser.winner = 'draw';
+      }
+    } else {
+      finalizedQuizForUser.winner = null;
+    }
+
+
     return {
       totalScore,
-      questionSubmissions: questionSubmissionBodies
+      questionSubmissions: questionSubmissionBodies,
+      quiz: finalizedQuizForUser
     };
 
   },
