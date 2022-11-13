@@ -1,15 +1,15 @@
 'use strict';
 
 module.exports = ({ strapi }) => ({
-  myInvites(ctx) {
-    ctx.body = strapi
+  async myInvites(ctx) {
+    ctx.body = await strapi
       .plugin('invite')
       .service('inviteService')
       .getMyInvites(ctx);
+
   },
-  invite(ctx) {
-    // console.log(ctx);
-    ctx.body = strapi
+  async invite(ctx) {
+    ctx.body = await strapi
       .plugin('invite')
       .service('inviteService')
       .createInvite(ctx);

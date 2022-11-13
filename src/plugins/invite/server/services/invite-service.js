@@ -12,10 +12,10 @@ function getIntersectedSkill(user1, user2) {
 }
 
 async function getQuizQuestionsBySkill(skill) {
-  const questions = strapi.db.query('api::question.question')
+  const questions = await strapi.db.query('api::question.question')
     .findMany({
       where: {
-        skill: skill.id
+        skill
       },
       populate: {
         answers: true
@@ -27,7 +27,8 @@ async function getQuizQuestionsBySkill(skill) {
 
 module.exports = ({ strapi }) => ({
   async createInvite(ctx) {
-    const invitedUser = await strapi.db.query('api::quiz.quiz')
+
+    const invitedUser = await strapi.db.query('plugin::users-permissions.user')
       .findOne({
         where: {
           id: ctx.request.body.userId
@@ -38,10 +39,10 @@ module.exports = ({ strapi }) => ({
       });
 
     if (!invitedUser) {
-      ctx.send({message: 'User not found'}, 404)
+      return ctx.send({message: 'User not found'}, 404);
     }
 
-    const currentUser = await strapi.db.query('api::quiz.quiz')
+    const currentUser = await strapi.db.query('plugin::users-permissions.user')
       .findOne({
         where: {
           id: ctx.state.user.id
@@ -51,31 +52,33 @@ module.exports = ({ strapi }) => ({
         }
       });
 
-    const skill = await getIntersectedSkill(invitedUser, currentUser);
+    // uncomment this once enough data
+    // const skill = await getIntersectedSkill(invitedUser, currentUser);
+    const skill = 127;
     const questions = await getQuizQuestionsBySkill(skill);
 
     const quizBody = {
       users: [ctx.state.user.id, invitedUser.id],
-      questions: [questions.map(q => q.id)]
-    }
+      questions: questions.map(q => q.id)
+    };
 
-    const quiz = await strapi.service('api::quiz.quiz').create({data: quizBody});
-
-    return quiz;
+    return strapi.service('api::quiz.quiz').create({data: quizBody});
   },
 
   async getMyInvites(ctx) {
-    const existingQuizzes = await strapi.db.query('api::quiz.quiz')
-        .findMany({
-          where: {
-            'users.id': ctx.state.user.id,
-            isFinished: false
+    const invites = await strapi.db.query('api::quiz.quiz')
+      .findMany({
+        where: {
+          users: {
+            id: ctx.state.user.id
           },
-          populate: {
-            users_permissions_users: true,
-          }
-        });
+          isFinished: false
+        },
+        populate: {
+          users: true,
+        }
+      });
 
-    return existingQuizzes;
+    return invites;
   }
 });
