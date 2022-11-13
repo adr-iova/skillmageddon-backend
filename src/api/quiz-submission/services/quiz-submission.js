@@ -98,9 +98,7 @@ module.exports = ({ strapi }) => ({
 
     let finalizedQuizForUser = await strapi.db.query('api::quiz.quiz').findOne({
       where: {
-        users: {
-          id: ctx.request.body.quizId
-        }
+        id: ctx.request.body.quizId
       },
       populate: {
         users: true,
