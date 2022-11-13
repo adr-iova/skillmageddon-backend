@@ -89,7 +89,7 @@ index a6be6d5..b0aa697 100644
    async github({ accessToken }) {
      const github = purest({
 diff --git a/node_modules/@strapi/plugin-users-permissions/server/services/providers.js b/node_modules/@strapi/plugin-users-permissions/server/services/providers.js
-index 79805b3..b479991 100644
+index 79805b3..06ef3a1 100644
 --- a/node_modules/@strapi/plugin-users-permissions/server/services/providers.js
 +++ b/node_modules/@strapi/plugin-users-permissions/server/services/providers.js
 @@ -7,6 +7,9 @@
@@ -102,7 +102,16 @@ index 79805b3..b479991 100644
  
  const { getAbsoluteServerUrl } = require('@strapi/utils');
  const { getService } = require('../utils');
-@@ -96,9 +99,60 @@ module.exports = ({ strapi }) => {
+@@ -88,7 +91,7 @@ module.exports = ({ strapi }) => {
+       .findOne({ where: { type: advancedSettings.default_role } });
+ 
+     // Create the new user.
+-    const newUser = {
++    let newUser = {
+       ...profile,
+       email, // overwrite with lowercased email
+       provider,
+@@ -96,9 +99,67 @@ module.exports = ({ strapi }) => {
        confirmed: true,
      };
  
@@ -119,6 +128,7 @@ index 79805b3..b479991 100644
 +
 +      const root = HTMLParser.parse(scrapedPage[0].text);
 +      const htmlElements = root.querySelectorAll(".js-technologies");
++      const resumeGeneralInfo = root.querySelector(".resume_top-info_location");
 +
 +
 +      let skills = [];
@@ -130,6 +140,12 @@ index 79805b3..b479991 100644
 +            skills.push(skill.trim());
 +          })
 +        })
++
++      newUser = {
++        ...newUser,
++        country: resumeGeneralInfo.split(',')[1].trim(),
++        job: resumeGeneralInfo.split('in')[0].trim()
++      }
 +
 +      createdUser = await strapi
 +        .query('plugin::users-permissions.user')

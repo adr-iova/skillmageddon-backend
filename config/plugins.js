@@ -3,4 +3,9 @@ module.exports = {
     enabled: true,
     resolve: './src/plugins/crawler'
   },
+  'invite': {
+    enabled: true,
+    resolve: './src/plugins/invite'
+  },
+
 }

@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2022-11-13T00:02:31.472Z"
+    "x-generation-date": "2022-11-13T01:26:48.675Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -1491,6 +1491,9 @@
                   ],
                   "example": "string or id"
                 }
+              },
+              "allowedTime": {
+                "type": "integer"
               }
             }
           }
@@ -2272,6 +2275,9 @@
                                                                                     }
                                                                                   }
                                                                                 },
+                                                                                "allowedTime": {
+                                                                                  "type": "integer"
+                                                                                },
                                                                                 "createdAt": {
                                                                                   "type": "string",
                                                                                   "format": "date-time"
@@ -2436,6 +2442,9 @@
                                                             }
                                                           }
                                                         }
+                                                      },
+                                                      "score": {
+                                                        "type": "integer"
                                                       },
                                                       "createdAt": {
                                                         "type": "string",
@@ -2777,6 +2786,9 @@
                     }
                   }
                 }
+              },
+              "allowedTime": {
+                "type": "integer"
               },
               "createdAt": {
                 "type": "string",
@@ -3604,6 +3616,9 @@
                                                                                     }
                                                                                   }
                                                                                 },
+                                                                                "allowedTime": {
+                                                                                  "type": "integer"
+                                                                                },
                                                                                 "createdAt": {
                                                                                   "type": "string",
                                                                                   "format": "date-time"
@@ -3768,6 +3783,9 @@
                                                             }
                                                           }
                                                         }
+                                                      },
+                                                      "score": {
+                                                        "type": "integer"
                                                       },
                                                       "createdAt": {
                                                         "type": "string",
@@ -4109,6 +4127,9 @@
                     }
                   }
                 }
+              },
+              "allowedTime": {
+                "type": "integer"
               },
               "createdAt": {
                 "type": "string",
@@ -4969,6 +4990,9 @@
                                                                                     }
                                                                                   }
                                                                                 },
+                                                                                "allowedTime": {
+                                                                                  "type": "integer"
+                                                                                },
                                                                                 "createdAt": {
                                                                                   "type": "string",
                                                                                   "format": "date-time"
@@ -5133,6 +5157,9 @@
                                                             }
                                                           }
                                                         }
+                                                      },
+                                                      "score": {
+                                                        "type": "integer"
                                                       },
                                                       "createdAt": {
                                                         "type": "string",
@@ -5474,6 +5501,9 @@
                     }
                   }
                 }
+              },
+              "allowedTime": {
+                "type": "integer"
               },
               "createdAt": {
                 "type": "string",
@@ -6301,6 +6331,9 @@
                                                                                     }
                                                                                   }
                                                                                 },
+                                                                                "allowedTime": {
+                                                                                  "type": "integer"
+                                                                                },
                                                                                 "createdAt": {
                                                                                   "type": "string",
                                                                                   "format": "date-time"
@@ -6465,6 +6498,9 @@
                                                             }
                                                           }
                                                         }
+                                                      },
+                                                      "score": {
+                                                        "type": "integer"
                                                       },
                                                       "createdAt": {
                                                         "type": "string",
@@ -6806,6 +6842,9 @@
                     }
                   }
                 }
+              },
+              "allowedTime": {
+                "type": "integer"
               },
               "createdAt": {
                 "type": "string",
@@ -7797,6 +7836,9 @@
                                                                         }
                                                                       }
                                                                     },
+                                                                    "allowedTime": {
+                                                                      "type": "integer"
+                                                                    },
                                                                     "createdAt": {
                                                                       "type": "string",
                                                                       "format": "date-time"
@@ -7961,6 +8003,9 @@
                                                 }
                                               }
                                             }
+                                          },
+                                          "score": {
+                                            "type": "integer"
                                           },
                                           "createdAt": {
                                             "type": "string",
@@ -9100,6 +9145,9 @@
                                                                         }
                                                                       }
                                                                     },
+                                                                    "allowedTime": {
+                                                                      "type": "integer"
+                                                                    },
                                                                     "createdAt": {
                                                                       "type": "string",
                                                                       "format": "date-time"
@@ -9264,6 +9312,9 @@
                                                 }
                                               }
                                             }
+                                          },
+                                          "score": {
+                                            "type": "integer"
                                           },
                                           "createdAt": {
                                             "type": "string",
@@ -10436,6 +10487,9 @@
                                                                         }
                                                                       }
                                                                     },
+                                                                    "allowedTime": {
+                                                                      "type": "integer"
+                                                                    },
                                                                     "createdAt": {
                                                                       "type": "string",
                                                                       "format": "date-time"
@@ -10600,6 +10654,9 @@
                                                 }
                                               }
                                             }
+                                          },
+                                          "score": {
+                                            "type": "integer"
                                           },
                                           "createdAt": {
                                             "type": "string",
@@ -11739,6 +11796,9 @@
                                                                         }
                                                                       }
                                                                     },
+                                                                    "allowedTime": {
+                                                                      "type": "integer"
+                                                                    },
                                                                     "createdAt": {
                                                                       "type": "string",
                                                                       "format": "date-time"
@@ -11903,6 +11963,9 @@
                                                 }
                                               }
                                             }
+                                          },
+                                          "score": {
+                                            "type": "integer"
                                           },
                                           "createdAt": {
                                             "type": "string",
@@ -13108,6 +13171,9 @@
                                                                         }
                                                                       }
                                                                     },
+                                                                    "allowedTime": {
+                                                                      "type": "integer"
+                                                                    },
                                                                     "createdAt": {
                                                                       "type": "string",
                                                                       "format": "date-time"
@@ -13272,6 +13338,9 @@
                                                 }
                                               }
                                             }
+                                          },
+                                          "score": {
+                                            "type": "integer"
                                           },
                                           "createdAt": {
                                             "type": "string",
@@ -14408,6 +14477,9 @@
                                                                         }
                                                                       }
                                                                     },
+                                                                    "allowedTime": {
+                                                                      "type": "integer"
+                                                                    },
                                                                     "createdAt": {
                                                                       "type": "string",
                                                                       "format": "date-time"
@@ -14572,6 +14644,9 @@
                                                 }
                                               }
                                             }
+                                          },
+                                          "score": {
+                                            "type": "integer"
                                           },
                                           "createdAt": {
                                             "type": "string",
@@ -15741,6 +15816,9 @@
                                                                         }
                                                                       }
                                                                     },
+                                                                    "allowedTime": {
+                                                                      "type": "integer"
+                                                                    },
                                                                     "createdAt": {
                                                                       "type": "string",
                                                                       "format": "date-time"
@@ -15905,6 +15983,9 @@
                                                 }
                                               }
                                             }
+                                          },
+                                          "score": {
+                                            "type": "integer"
                                           },
                                           "createdAt": {
                                             "type": "string",
@@ -17041,6 +17122,9 @@
                                                                         }
                                                                       }
                                                                     },
+                                                                    "allowedTime": {
+                                                                      "type": "integer"
+                                                                    },
                                                                     "createdAt": {
                                                                       "type": "string",
                                                                       "format": "date-time"
@@ -17205,6 +17289,9 @@
                                                 }
                                               }
                                             }
+                                          },
+                                          "score": {
+                                            "type": "integer"
                                           },
                                           "createdAt": {
                                             "type": "string",
@@ -17529,6 +17616,9 @@
                   }
                 ],
                 "example": "string or id"
+              },
+              "score": {
+                "type": "integer"
               }
             }
           }
@@ -18354,6 +18444,9 @@
                                                                                     }
                                                                                   }
                                                                                 },
+                                                                                "allowedTime": {
+                                                                                  "type": "integer"
+                                                                                },
                                                                                 "createdAt": {
                                                                                   "type": "string",
                                                                                   "format": "date-time"
@@ -18475,6 +18568,9 @@
                                                             }
                                                           }
                                                         }
+                                                      },
+                                                      "score": {
+                                                        "type": "integer"
                                                       },
                                                       "createdAt": {
                                                         "type": "string",
@@ -18781,6 +18877,9 @@
                     }
                   }
                 }
+              },
+              "score": {
+                "type": "integer"
               },
               "createdAt": {
                 "type": "string",
@@ -19652,6 +19751,9 @@
                                                                                     }
                                                                                   }
                                                                                 },
+                                                                                "allowedTime": {
+                                                                                  "type": "integer"
+                                                                                },
                                                                                 "createdAt": {
                                                                                   "type": "string",
                                                                                   "format": "date-time"
@@ -19773,6 +19875,9 @@
                                                             }
                                                           }
                                                         }
+                                                      },
+                                                      "score": {
+                                                        "type": "integer"
                                                       },
                                                       "createdAt": {
                                                         "type": "string",
@@ -20079,6 +20184,9 @@
                     }
                   }
                 }
+              },
+              "score": {
+                "type": "integer"
               },
               "createdAt": {
                 "type": "string",
@@ -20983,6 +21091,9 @@
                                                                                     }
                                                                                   }
                                                                                 },
+                                                                                "allowedTime": {
+                                                                                  "type": "integer"
+                                                                                },
                                                                                 "createdAt": {
                                                                                   "type": "string",
                                                                                   "format": "date-time"
@@ -21104,6 +21215,9 @@
                                                             }
                                                           }
                                                         }
+                                                      },
+                                                      "score": {
+                                                        "type": "integer"
                                                       },
                                                       "createdAt": {
                                                         "type": "string",
@@ -21410,6 +21524,9 @@
                     }
                   }
                 }
+              },
+              "score": {
+                "type": "integer"
               },
               "createdAt": {
                 "type": "string",
@@ -22281,6 +22398,9 @@
                                                                                     }
                                                                                   }
                                                                                 },
+                                                                                "allowedTime": {
+                                                                                  "type": "integer"
+                                                                                },
                                                                                 "createdAt": {
                                                                                   "type": "string",
                                                                                   "format": "date-time"
@@ -22402,6 +22522,9 @@
                                                             }
                                                           }
                                                         }
+                                                      },
+                                                      "score": {
+                                                        "type": "integer"
                                                       },
                                                       "createdAt": {
                                                         "type": "string",
@@ -22708,6 +22831,9 @@
                     }
                   }
                 }
+              },
+              "score": {
+                "type": "integer"
               },
               "createdAt": {
                 "type": "string",
@@ -23610,6 +23736,9 @@
                                                                                     }
                                                                                   }
                                                                                 },
+                                                                                "allowedTime": {
+                                                                                  "type": "integer"
+                                                                                },
                                                                                 "createdAt": {
                                                                                   "type": "string",
                                                                                   "format": "date-time"
@@ -23965,6 +24094,9 @@
                                 }
                               }
                             }
+                          },
+                          "score": {
+                            "type": "integer"
                           },
                           "createdAt": {
                             "type": "string",
@@ -24887,6 +25019,9 @@
                                                                                     }
                                                                                   }
                                                                                 },
+                                                                                "allowedTime": {
+                                                                                  "type": "integer"
+                                                                                },
                                                                                 "createdAt": {
                                                                                   "type": "string",
                                                                                   "format": "date-time"
@@ -25242,6 +25377,9 @@
                                 }
                               }
                             }
+                          },
+                          "score": {
+                            "type": "integer"
                           },
                           "createdAt": {
                             "type": "string",
@@ -26197,6 +26335,9 @@
                                                                                     }
                                                                                   }
                                                                                 },
+                                                                                "allowedTime": {
+                                                                                  "type": "integer"
+                                                                                },
                                                                                 "createdAt": {
                                                                                   "type": "string",
                                                                                   "format": "date-time"
@@ -26552,6 +26693,9 @@
                                 }
                               }
                             }
+                          },
+                          "score": {
+                            "type": "integer"
                           },
                           "createdAt": {
                             "type": "string",
@@ -27474,6 +27618,9 @@
                                                                                     }
                                                                                   }
                                                                                 },
+                                                                                "allowedTime": {
+                                                                                  "type": "integer"
+                                                                                },
                                                                                 "createdAt": {
                                                                                   "type": "string",
                                                                                   "format": "date-time"
@@ -27829,6 +27976,9 @@
                                 }
                               }
                             }
+                          },
+                          "score": {
+                            "type": "integer"
                           },
                           "createdAt": {
                             "type": "string",
@@ -33929,6 +34079,9 @@
                                                                                     }
                                                                                   }
                                                                                 },
+                                                                                "allowedTime": {
+                                                                                  "type": "integer"
+                                                                                },
                                                                                 "createdAt": {
                                                                                   "type": "string",
                                                                                   "format": "date-time"
@@ -34093,6 +34246,9 @@
                                                             }
                                                           }
                                                         }
+                                                      },
+                                                      "score": {
+                                                        "type": "integer"
                                                       },
                                                       "createdAt": {
                                                         "type": "string",
@@ -35185,6 +35341,9 @@
                                                                                     }
                                                                                   }
                                                                                 },
+                                                                                "allowedTime": {
+                                                                                  "type": "integer"
+                                                                                },
                                                                                 "createdAt": {
                                                                                   "type": "string",
                                                                                   "format": "date-time"
@@ -35349,6 +35508,9 @@
                                                             }
                                                           }
                                                         }
+                                                      },
+                                                      "score": {
+                                                        "type": "integer"
                                                       },
                                                       "createdAt": {
                                                         "type": "string",
@@ -36474,6 +36636,9 @@
                                                                                     }
                                                                                   }
                                                                                 },
+                                                                                "allowedTime": {
+                                                                                  "type": "integer"
+                                                                                },
                                                                                 "createdAt": {
                                                                                   "type": "string",
                                                                                   "format": "date-time"
@@ -36638,6 +36803,9 @@
                                                             }
                                                           }
                                                         }
+                                                      },
+                                                      "score": {
+                                                        "type": "integer"
                                                       },
                                                       "createdAt": {
                                                         "type": "string",
@@ -37730,6 +37898,9 @@
                                                                                     }
                                                                                   }
                                                                                 },
+                                                                                "allowedTime": {
+                                                                                  "type": "integer"
+                                                                                },
                                                                                 "createdAt": {
                                                                                   "type": "string",
                                                                                   "format": "date-time"
@@ -37894,6 +38065,9 @@
                                                             }
                                                           }
                                                         }
+                                                      },
+                                                      "score": {
+                                                        "type": "integer"
                                                       },
                                                       "createdAt": {
                                                         "type": "string",
@@ -39009,6 +39183,9 @@
                                                                                                   }
                                                                                                 }
                                                                                               },
+                                                                                              "allowedTime": {
+                                                                                                "type": "integer"
+                                                                                              },
                                                                                               "createdAt": {
                                                                                                 "type": "string",
                                                                                                 "format": "date-time"
@@ -39173,6 +39350,9 @@
                                                                           }
                                                                         }
                                                                       }
+                                                                    },
+                                                                    "score": {
+                                                                      "type": "integer"
                                                                     },
                                                                     "createdAt": {
                                                                       "type": "string",
@@ -40294,6 +40474,9 @@
                                                                                                   }
                                                                                                 }
                                                                                               },
+                                                                                              "allowedTime": {
+                                                                                                "type": "integer"
+                                                                                              },
                                                                                               "createdAt": {
                                                                                                 "type": "string",
                                                                                                 "format": "date-time"
@@ -40458,6 +40641,9 @@
                                                                           }
                                                                         }
                                                                       }
+                                                                    },
+                                                                    "score": {
+                                                                      "type": "integer"
                                                                     },
                                                                     "createdAt": {
                                                                       "type": "string",
@@ -41612,6 +41798,9 @@
                                                                                                   }
                                                                                                 }
                                                                                               },
+                                                                                              "allowedTime": {
+                                                                                                "type": "integer"
+                                                                                              },
                                                                                               "createdAt": {
                                                                                                 "type": "string",
                                                                                                 "format": "date-time"
@@ -41776,6 +41965,9 @@
                                                                           }
                                                                         }
                                                                       }
+                                                                    },
+                                                                    "score": {
+                                                                      "type": "integer"
                                                                     },
                                                                     "createdAt": {
                                                                       "type": "string",
@@ -42897,6 +43089,9 @@
                                                                                                   }
                                                                                                 }
                                                                                               },
+                                                                                              "allowedTime": {
+                                                                                                "type": "integer"
+                                                                                              },
                                                                                               "createdAt": {
                                                                                                 "type": "string",
                                                                                                 "format": "date-time"
@@ -43061,6 +43256,9 @@
                                                                           }
                                                                         }
                                                                       }
+                                                                    },
+                                                                    "score": {
+                                                                      "type": "integer"
                                                                     },
                                                                     "createdAt": {
                                                                       "type": "string",
@@ -44377,6 +44575,9 @@
                                                                                     }
                                                                                   }
                                                                                 },
+                                                                                "allowedTime": {
+                                                                                  "type": "integer"
+                                                                                },
                                                                                 "createdAt": {
                                                                                   "type": "string",
                                                                                   "format": "date-time"
@@ -44541,6 +44742,9 @@
                                                             }
                                                           }
                                                         }
+                                                      },
+                                                      "score": {
+                                                        "type": "integer"
                                                       },
                                                       "createdAt": {
                                                         "type": "string",
@@ -45747,6 +45951,9 @@
                                                                                     }
                                                                                   }
                                                                                 },
+                                                                                "allowedTime": {
+                                                                                  "type": "integer"
+                                                                                },
                                                                                 "createdAt": {
                                                                                   "type": "string",
                                                                                   "format": "date-time"
@@ -45911,6 +46118,9 @@
                                                             }
                                                           }
                                                         }
+                                                      },
+                                                      "score": {
+                                                        "type": "integer"
                                                       },
                                                       "createdAt": {
                                                         "type": "string",
@@ -47150,6 +47360,9 @@
                                                                                     }
                                                                                   }
                                                                                 },
+                                                                                "allowedTime": {
+                                                                                  "type": "integer"
+                                                                                },
                                                                                 "createdAt": {
                                                                                   "type": "string",
                                                                                   "format": "date-time"
@@ -47314,6 +47527,9 @@
                                                             }
                                                           }
                                                         }
+                                                      },
+                                                      "score": {
+                                                        "type": "integer"
                                                       },
                                                       "createdAt": {
                                                         "type": "string",
@@ -48520,6 +48736,9 @@
                                                                                     }
                                                                                   }
                                                                                 },
+                                                                                "allowedTime": {
+                                                                                  "type": "integer"
+                                                                                },
                                                                                 "createdAt": {
                                                                                   "type": "string",
                                                                                   "format": "date-time"
@@ -48684,6 +48903,9 @@
                                                             }
                                                           }
                                                         }
+                                                      },
+                                                      "score": {
+                                                        "type": "integer"
                                                       },
                                                       "createdAt": {
                                                         "type": "string",

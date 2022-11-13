@@ -49,6 +49,9 @@
       "relation": "oneToMany",
       "target": "api::submission-question.submission-question",
       "mappedBy": "question"
+    },
+    "allowedTime": {
+      "type": "integer"
     }
   }
 }
