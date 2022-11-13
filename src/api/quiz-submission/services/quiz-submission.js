@@ -122,8 +122,7 @@ module.exports = ({ strapi }) => ({
     const quizzes = await strapi.db.query('api::quiz.quiz').findMany({
       where: {
         users: {
-          id: 26
-          // id: ctx.state.user.id
+          id: ctx.state.user.id
         }
       },
       populate: {
