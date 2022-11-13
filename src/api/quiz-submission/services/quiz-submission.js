@@ -5,12 +5,12 @@
  */
 
 function getTimeScore(question, answer) {
-  if (answer.time <= question.time / 3) {
-    return Math.floor(question.score / 2);
+  if (answer.time <= question.allowedTime / 3) {
+    return Math.floor(question.Score / 2);
   }
 
-  if (answer.time <= 2 * question.time / 3) {
-    return Math.floor(question.score / 3);
+  if (answer.time <= 2 * question.allowedTime / 3) {
+    return Math.floor(question.Score / 3);
   }
 
   return 0;
@@ -28,14 +28,12 @@ module.exports = ({ strapi }) => ({
       }
     });
 
-    console.log("Submission", submission);
-
     const questionSubmissionBodies = [];
     let totalScore = 0;
 
     for (let i = 0; i < ctx.request.body.responses.length; ++i) {
       const response = ctx.request.body.responses[i];
-      const question = await strapi.db.query('api:quiz.quiz').findOne({
+      const question = await strapi.db.query('api::question.question').findOne({
         where: {
           id: response.questionId
         },
@@ -52,26 +50,28 @@ module.exports = ({ strapi }) => ({
       const questionSubmissionBody = {
         answer: response.answer,
         question: question.id,
-        submission: submission.id
+        submission: submission.id,
+        score: 0
       }
 
       const selectedAnswer = question.answers.find(a => a.text === response.answer);
 
       if (selectedAnswer && selectedAnswer.isCorrect) {
-        const score = question.score + getTimeScore(question, selectedAnswer);
+        const score = question.Score + getTimeScore(question, selectedAnswer);
         questionSubmissionBody.score = score;
         totalScore += score;
 
       }
-      questionSubmissionBodies.push(questionSubmissionBodies);
+      questionSubmissionBodies.push(questionSubmissionBody);
     }
 
-    const submissionQuestionsEntries = await strapi.db.query('api::question-submission.question-submission').createMany({
+    const submissionQuestionsEntries = await strapi.db.query('api::submission-question.submission-question').createMany({
       data: questionSubmissionBodies
     })
 
     console.log("created question submissions");
 
+    console.log(totalScore);
     await strapi.service('api::submission.submission').update(submission.id, {data: {
       ...submission,
         score: totalScore
@@ -79,21 +79,29 @@ module.exports = ({ strapi }) => ({
 
     console.log("updated submission with score");
 
-    const currentUser = await strapi.service('plugin::users-permissions.user').findOne(ctx.state.user.id);
-    await strapi.service('plugin::users-permissions.user').update(ctx.state.user.id, {
-      ...currentUser,
-      score: currentUser.score + totalScore
+    const currentUser = await strapi.db.query('plugin::users-permissions.user').findOne(ctx.state.user.id);
+
+    console.log(currentUser);
+    await strapi.db.query('plugin::users-permissions.user').update( {
+      where: {
+        id: ctx.state.user.id,
+      },
+      data: {
+        totalScore: currentUser.score + totalScore
+      }
     });
 
-    console.log('updated current user', currentUser.score + totalScore);
+    console.log('updated current user', (currentUser.score || 0) + totalScore);
 
-    return submissionQuestionsEntries;
+    console.log(questionSubmissionBodies);
+    return {
+      totalScore,
+      questionSubmissions: questionSubmissionBodies
+    };
 
   },
 
   async quiz(ctx) {
-    let fullQuiz = {
-    }
     const quiz = await strapi.db.query('api::quiz.quiz').findOne({
       where: {
         id: ctx.params.id
