@@ -173,18 +173,23 @@ module.exports = ({ strapi }) => ({
 
     return quizzes.map(q => {
       let quiz = {...q};
-      if (q.submissions.length === 2) {
-        console.log(q.submissions[0].score, q.submissions[1].score)
-        if (q.submissions[0].score > q.submissions[1].score) {
-          quiz.winner = q.submissions[0].user;
-        } else if (q.submissions[0].score < q.submissions[1].score) {
-          console.log(q.submissions[1].user);
-          quiz.winner = q.submissions[1].user;
-        } else {
-          quiz.winner = 'draw';
+      if (q.submissions.length >= 2) {
+        let submissionMap = {};
+        let userMap = {};
+        q.submissions.forEach(sbs => {
+          submissionMap[sbs.user.id] = sbs.score;
+          userMap[sbs.user.id] = sbs.user;
+        })
+
+        let winnerId;
+        let maxScore = -1;
+        for (const [key, value] of Object.entries(submissionMap)) {
+          if (value > maxScore) {
+            maxScore = value;
+            winnerId = key;
+          }
         }
-      } else {
-        quiz.winner = null;
+        quiz.winner = userMap[winnerId];
       }
 
       return quiz;
