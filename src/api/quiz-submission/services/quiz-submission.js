@@ -116,7 +116,6 @@ module.exports = ({ strapi }) => ({
       if (finalizedQuizForUser.submissions[0].score > finalizedQuizForUser.submissions[1].score) {
         finalizedQuizForUser.winner = finalizedQuizForUser.submissions[0].user;
       } else if (finalizedQuizForUser.submissions[0].score < finalizedQuizForUser.submissions[1].score) {
-        console.log(q.submissions[1].user);
         finalizedQuizForUser.winner = finalizedQuizForUser.submissions[1].user;
       } else {
         finalizedQuizForUser.winner = 'draw';
